@@ -55,7 +55,7 @@
 
     p,
     li {
-        text-wrap: pretty;
+        /* text-wrap: pretty; */
     }
 
     img,
@@ -85,16 +85,168 @@
 
 @layer base {
 
+    :root {
+        --clr-white: white;
+        --clr-yellow: hsl(47, 88%, 63%);
+        --clr-gray-500: hsl(0, 0%, 42%);
+        --clr-gray_950: hsl(0, 0%, 7%);
+        --clr-black: black;
+
+
+        --ff-general: Figtree, sans-serif;
+
+        --fs-heading: 1.5rem;
+        --fs-body-m: 1rem;
+        --fs-body-s: 0.875rem;
+
+        --lh-m: 1.5;
+
+        --border-radius-1: 0.25rem;
+        --border-radius-2: 0.625rem;
+        --border-radius-3: 1.25rem;
+
+        --border-size: 0.0625rem;
+
+        --spacing-50: 0.25rem;
+        --spacing-100: 0.5rem;
+        --spacing-150: 0.75rem;
+        --spacing-300: 1.5rem;
+
+        --shadow-size: 0.5rem;
+
+        @media (width < 600px) {
+            --fs-heading: 1.25rem;
+            --fs-body-m: 0.875rem;
+            --fs-body-s: 0.75rem;
+        }
+    }
+
+    :root {
+
+        --clr-txt-main: var(--clr-gray_950);
+        --clr-txt-light: var(--clr-gray-500);
+        --clr-txt-hover: var(--clr-yellow);
+
+        --clr-border-primary: var(--clr-gray_950);
+
+        --clr-bg-primary: var(--clr-yellow);
+        --clr-bg-shadow: var(--clr-black);
+        --clr-bg-secondary: var(--clr-white);
+
+        --padding-card: var(--spacing-300);
+        --padding-tag: var(--spacing-50) var(--spacing-150);
+        --margin-block-card: var(--spacing-300);
+        --margin-block-content: var(--spacing-150);
+        --gap-inline-author: var(--spacing-150);
+
+        --border-strength-card: var(--border-size);
+        --border-radius-card: var(--border-radius-3);
+        --border-radius-image: var(--border-radius-2);
+        --border-radius-tag: var(--border-radius-1);
+
+        --shadow-card: var(--shadow-size);
+
+        --fs-content-m: var(--fs-body-m);
+        --fs-heading-blog: var(--fs-heading);
+        --fs-content-s: var(--fs-body-s);
+
+        --lh-general: var(--lh-m);
+
+        --flow-space: 0.75em;
+    }
+
     body {
         font-family: Figtree, sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: var(--fs-content-m);
+        background-color: var(--clr-bg-primary);
+        color: var(--clr-txt-main);
+        line-height: var(--lh-general);
     }
+
+
 }
 
 @layer layout {
 
+    .flow > * + * {
+        margin-block-start: var(--flow-space, 1em);
+    }
+
+    .content-wrapper,
+    .author-wrapper {
+        margin-block-start: var(--margin-block-card);
+    }
+
+    .author-wrapper {
+
+    }
+
+    .blog-preview-img {
+        border-radius: var(--border-radius-image);
+        block-size: 200px;
+        object-fit: cover;
+    }
+
+
+    .category-tag {
+        display: inline;
+        padding: var(--padding-tag);
+        background-color: var(--clr-bg-primary);
+        border-radius: var(--border-radius-tag);
+        font-weight: 700;
+        font-size: var(--fs-body-s);
+    }
+
+    .date {
+        font-size: var(--fs-body-s);
+
+    }
+
+    .blog-title {
+        font-size: var(--fs-heading-blog);
+        font-weight: 800;
+    }
+
+    .blog-description {
+        color: var(--clr-txt-light);
+    }
+
+    .author-wrapper {
+        display: flex;
+        justify-content: start;
+        align-items: center;
+        gap: var(--gap-inline-author);
+    }
+
+    .author-wrapper > img {
+        inline-size: 2rem;
+    }
+
+    .blog-author {
+        font-weight: 800;
+        font-size: var(--fs-content-s);
+    }
 }
 
 @layer components {
+
+    .card {
+        inline-size: 384px;
+        background-color: var(--clr-bg-secondary);
+        padding: var(--padding-card);
+        border-radius: var(--border-radius-card);
+        border: var(--border-strength-card) solid var(--clr-border-primary);
+        box-shadow: var(--clr-bg-shadow) var(--shadow-card) var(--shadow-card);
+
+        @media (width < 600px) {
+            inline-size: 327px;
+        }
+
+    }
+
 
 }
 

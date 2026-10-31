@@ -74,10 +74,20 @@
 
 @layer font-embedding {
 
+    @font-face {
+        font-family: "Figtree";
+        src: local("Figtree"),
+        url("assets/fonts/Figtree-VariableFont_wght.ttf") format("truetype");
+        font-weight: 100 900;
+        font-style: normal;
+    }
 }
 
 @layer base {
 
+    body {
+        font-family: Figtree, sans-serif;
+    }
 }
 
 @layer layout {

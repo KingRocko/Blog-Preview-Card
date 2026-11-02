@@ -177,7 +177,7 @@
 
     .content-wrapper,
     .author-wrapper {
-        margin-block-start: var(--margin-block-card);
+        /* margin-block-start: var(--margin-block-card); */
     }
 
     .author-wrapper {
@@ -234,13 +234,18 @@
 @layer components {
 
     .card {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        gap: var(--margin-block-card);
         inline-size: 384px;
         background-color: var(--clr-bg-secondary);
         padding: var(--padding-card);
         border-radius: var(--border-radius-card);
         border: var(--border-strength-card) solid var(--clr-border-primary);
         box-shadow: var(--clr-bg-shadow) var(--shadow-card) var(--shadow-card);
-
+        
         @media (width < 600px) {
             inline-size: 327px;
         }

@@ -172,8 +172,6 @@
         color: var(--clr-txt-main);
         line-height: var(--lh-general);
     }
-
-
 }
 
 @layer layout {
@@ -188,7 +186,6 @@
         object-fit: cover;
     }
 
-
     .category-tag {
         display: inline;
         padding: var(--padding-tag);
@@ -201,10 +198,21 @@
     .date {
         font-size: var(--fs-body-s);
     }
-
+    
     .blog-title {
         font-size: var(--fs-heading-blog);
         font-weight: var(--fw-bold-general);
+    }
+
+    .blog-title:hover,
+    .blog-title:focus-visible {
+        color: var(--clr-txt-hover);
+        cursor: pointer;
+    }
+
+    a {
+        text-decoration: none;
+        color: inherit;
     }
 
     .blog-description {
@@ -246,12 +254,5 @@
         @media (width < 600px) {
             inline-size: 327px;
         }
-
     }
-
-
-}
-
-@layer utilities {
-
 }

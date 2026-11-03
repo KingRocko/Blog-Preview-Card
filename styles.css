@@ -187,6 +187,8 @@
         font-weight: var(--fw-bold-default);
     }
 
+    .blog-author:hover,
+    .blog-author:focus-visible,
     .blog-title:hover,
     .blog-title:focus-visible {
         color: var(--clr-txt-hover);

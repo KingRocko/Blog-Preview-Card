@@ -40,12 +40,12 @@ Users should be able to:
 
 ### What I learned
 
-- Better usage of Primitive and Semantic Custom Properties
-- Changing from block elements to Flexbox inside the card
-- Usage of the semantice time tag element
+- Better usage of Primitive and Semantic Custom Properties, i. e. usage of primitves custom properties for spacing values instead of intermediate semantic custom properties
+- Changing from block elements to Flexbox inside the card. Flexbox might be the better or more robust choice instead of relying on stacking elements by the static behaviour.
+- Usage of the semantic time tag element. This makes the site more accesible for screen readers and search engines.
 
 
 ### Continued development
 
-– Which breakpoints to use
+– Which breakpoints to use. I'm not sure, which breakpoint in this project really makes sense.
 
